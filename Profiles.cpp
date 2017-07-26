@@ -62,12 +62,18 @@ std::string GetTime()
 {
 	time_t timeObj;
 	time(&timeObj);
-	tm *pTime = localtime(&timeObj);
-	char buffer[100];
-	sprintf(buffer, "%d-%02d-%02d-%02d:%02d:%02d",
-		pTime->tm_year+1900, pTime->tm_mon+1, pTime->tm_mday,
-		pTime->tm_hour, pTime->tm_min, pTime->tm_sec);
-	return buffer;
+	tm *pTime = NULL;
+	auto err = localtime_s(pTime, &timeObj);
+	if (!err)
+	{
+		char buffer[100];
+		sprintf_s(buffer, sizeof(buffer), "%d-%02d-%02d-%02d:%02d:%02d",
+			pTime->tm_year + 1900, pTime->tm_mon + 1, pTime->tm_mday,
+			pTime->tm_hour, pTime->tm_min, pTime->tm_sec);
+		return buffer;
+	}
+
+	return "";
 }
 
 void BackupProfile(LPSTR lpszProfileName)
