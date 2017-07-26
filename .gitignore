@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/ProfileProp/v14
+/Release
+/ProfileProp.VC.VC.opendb
+/ProfileProp.VC.db
