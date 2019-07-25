@@ -31,7 +31,8 @@ Suppose you wanted to use this to output the display name of each account in the
 C:\>ProfileProp.exe 0x3001001F
 Profile Property Tool
 Profile: Outlook
-Property: 0x3001001FExamining account Microsoft Exchange
+Property: 0x3001001F
+Examining account Microsoft Exchange
 Located property
 Property tag: 0x3001001F
 Value: sgriffin@example.com
